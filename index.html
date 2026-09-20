@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Joel David Oses Castillo">
+<meta name="description" content="Tarea 1 - Etiquetas de HTML5">
+<meta name="keywords" content="HTML5, etiquetas, tarea">
+<title>Tarea 1 - Etiquetas HTML5</title>
+<link rel="icon" href="img/foto.png">
+</head>
+<body>
+
+<h1>Tarea 1: Etiquetas de HTML5</h1>
+<p>Nombre: <b>Joel David Oses Castillo</b></p>
+<img src="img/foto.png" alt="Mi foto" width="150">
+<p>Curso: ISW-512 Diseño de Aplicaciones Web</p>
+
+<hr>
+<h2>A. Etiquetas de estructura básica</h2>
+<p>Estas etiquetas no se ven en la página, por eso se explican con texto.</p>
+<ul>
+  <li>&lt;!DOCTYPE&gt;: le dice al navegador que el documento es HTML5. Va en la primera línea.</li>
+  <li>&lt;html&gt;: es la etiqueta principal, todo el documento va dentro de ella.</li>
+  <li>&lt;head&gt;: es la cabeza, tiene el título, los metadatos y los enlaces a otros archivos.</li>
+  <li>&lt;title&gt;: es el título que sale en la pestaña del navegador.</li>
+  <li>&lt;base&gt;: define la URL base de los enlaces relativos. Ejemplo: &lt;base href="https://miweb.com/"&gt;</li>
+  <li>&lt;link&gt;: enlaza recursos externos como hojas de estilo o el ícono de la pestaña.</li>
+  <li>&lt;meta&gt;: guarda datos de la página como el autor, la descripción y las palabras clave (están en el head de esta página).</li>
+  <li>&lt;body&gt;: es el cuerpo, tiene todo el contenido que se ve en la página.</li>
+</ul>
+
+<hr>
+<h2>B. Etiquetas de estructura de sección</h2>
+
+<h3>&lt;h1&gt; a &lt;h6&gt;</h3>
+<p>Son los encabezados. El h1 es el más importante y el h6 el menos importante.</p>
+<h1>Encabezado 1</h1>
+<h2>Encabezado 2</h2>
+<h3>Encabezado 3</h3>
+<h4>Encabezado 4</h4>
+<h5>Encabezado 5</h5>
+<h6>Encabezado 6</h6>
+
+<h3>&lt;hgroup&gt;</h3>
+<p>Agrupa un título con su subtítulo.</p>
+<hgroup>
+  <h3>Título principal</h3>
+  <p>Este es el subtítulo</p>
+</hgroup>
+
+<h3>&lt;address&gt;</h3>
+<p>Sirve para poner la información de contacto del autor.</p>
+<address>
+  Joel David Oses Castillo<br>
+  Correo: <a href="mailto:joeoses1208@gmail.com">joeoses1208@gmail.com</a><br>
+  Teléfono: 8888-8888
+</address>
+
+<h3>&lt;div&gt;</h3>
+<p>Es una división genérica que sirve para agrupar elementos.</p>
+<div style="border: 1px solid black;">
+  <p>Este texto está dentro de un div con borde.</p>
+</div>
+
+<h3>&lt;iframe&gt;</h3>
+<p>Muestra una página web dentro de otra página web.</p>
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-84.15%2C9.85%2C-84.0%2C9.98&layer=mapnik" width="500" height="250"></iframe>
+
+<hr>
+<h2>C. Etiquetas de estructura de grupo</h2>
+
+<h3>&lt;ul&gt; y &lt;li&gt;</h3>
+<p>ul es una lista sin orden y li es cada elemento de la lista.</p>
+<ul>
+  <li>Manzana</li>
+  <li>Banano</li>
+  <li>Naranja</li>
+</ul>
+
+<h3>&lt;ol&gt;</h3>
+<p>Es una lista ordenada, con números.</p>
+<ol>
+  <li>Primer paso</li>
+  <li>Segundo paso</li>
+  <li>Tercer paso</li>
+</ol>
+
+<h3>&lt;dl&gt;, &lt;dt&gt; y &lt;dd&gt;</h3>
+<p>dl es una lista de descripción, dt es el término y dd es la descripción.</p>
+<dl>
+  <dt>HTML</dt>
+  <dd>Lenguaje para crear páginas web</dd>
+  <dt>CSS</dt>
+  <dd>Lenguaje para darle estilo a las páginas</dd>
+</dl>
+
+<h3>&lt;figure&gt; y &lt;figcaption&gt;</h3>
+<p>figure agrupa una imagen y figcaption le pone una leyenda.</p>
+<figure>
+  <img src="img/perro.jpg" alt="Imagen de ejemplo" width="200">
+  <figcaption>Figura 1: Imagen de ejemplo</figcaption>
+</figure>
+
+<h3>&lt;details&gt; y &lt;summary&gt;</h3>
+<p>details muestra u oculta información y summary es el título que se ve.</p>
+<details>
+  <summary>Haga clic aquí para ver más</summary>
+  <p>Este texto estaba oculto.</p>
+</details>
+
+<h3>&lt;dialog&gt;</h3>
+<p>Muestra una ventana emergente. Se abre y se cierra con un botón.</p>
+<button onclick="document.getElementById('miDialogo').showModal()">Abrir dialogo</button>
+<dialog id="miDialogo">
+  <p>Hola, este es un dialogo.</p>
+  <button onclick="document.getElementById('miDialogo').close()">Cerrar</button>
+</dialog>
+
+<hr>
+<h2>D. Etiquetas de texto</h2>
+
+<h3>&lt;p&gt;</h3>
+<p>Define un párrafo.</p>
+<p>Este es un párrafo de ejemplo.</p>
+
+<h3>&lt;br&gt;</h3>
+<p>Hace un salto de línea.</p>
+<p>Primera línea<br>Segunda línea<br>Tercera línea</p>
+
+<h3>&lt;pre&gt;</h3>
+<p>Respeta los espacios y saltos de línea tal como se escriben.</p>
+<pre>
+Este   texto    respeta
+     los espacios
+</pre>
+
+<h3>&lt;blockquote&gt;</h3>
+<p>Es una cita en bloque, con sangría.</p>
+<blockquote>Esta es una cita larga tomada de otra fuente.</blockquote>
+
+<h3>&lt;q&gt;</h3>
+<p>Es una cita corta dentro de una línea, con comillas.</p>
+<p>El profesor dijo: <q>Hay que practicar mucho</q>.</p>
+
+<h3>&lt;cite&gt;</h3>
+<p>Es el título de una obra citada.</p>
+<p>Leí el libro <cite>Don Quijote de la Mancha</cite>.</p>
+
+<h3>&lt;abbr&gt;</h3>
+<p>Es una abreviatura. Al pasar el mouse muestra el significado.</p>
+<p><abbr title="HyperText Markup Language">HTML</abbr></p>
+
+<h3>&lt;dfn&gt;</h3>
+<p>Marca un término que se está definiendo.</p>
+<p><dfn title="Programa para ver páginas web">Navegador</dfn></p>
+
+<h3>&lt;code&gt;</h3>
+<p>Muestra un fragmento de código.</p>
+<p>Para imprimir en pantalla se usa <code>console.log("Hola");</code></p>
+
+<h3>&lt;kbd&gt;</h3>
+<p>Muestra teclas del teclado.</p>
+<p>Para copiar presione <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
+
+<h3>&lt;b&gt;</h3>
+<p>Pone el texto en negrita.</p>
+<p>Este texto está en <b>negrita</b>.</p>
+
+<h3>&lt;strong&gt;</h3>
+<p>Marca un texto importante (también se ve en negrita).</p>
+<p><strong>Importante:</strong> entregar la tarea a tiempo.</p>
+
+<h3>&lt;i&gt;</h3>
+<p>Pone el texto en cursiva.</p>
+<p>Este texto está en <i>cursiva</i>.</p>
+
+<h3>&lt;em&gt;</h3>
+<p>Le da énfasis a un texto (también se ve en cursiva).</p>
+<p>Yo <em>sí</em> hice la tarea.</p>
+
+<h3>&lt;mark&gt;</h3>
+<p>Resalta el texto como con un marcador.</p>
+<p>Este texto tiene una <mark>parte resaltada</mark>.</p>
+
+<h3>&lt;small&gt;</h3>
+<p>Hace el texto más pequeño.</p>
+<p>Texto normal y <small>texto pequeño</small>.</p>
+
+<h3>&lt;del&gt;</h3>
+<p>Muestra un texto eliminado, con una línea encima.</p>
+<p>Precio: <del>10000</del></p>
+
+<h3>&lt;ins&gt;</h3>
+<p>Muestra un texto insertado, subrayado.</p>
+<p>Precio nuevo: <ins>8000</ins></p>
+
+<h3>&lt;sub&gt;</h3>
+<p>Texto subíndice, abajo de la línea.</p>
+<p>H<sub>2</sub>O</p>
+
+<h3>&lt;sup&gt;</h3>
+<p>Texto superíndice, arriba de la línea.</p>
+<p>2<sup>3</sup> = 8</p>
+
+<h3>&lt;time&gt;</h3>
+<p>Muestra una fecha o una hora.</p>
+<p>Hoy es <time datetime="2026-09-20">20 de septiembre de 2026</time></p>
+
+<h3>&lt;data&gt;</h3>
+<p>Muestra un dato con un valor asociado.</p>
+<p>Producto: <data value="123">Mouse</data></p>
+
+<h3>&lt;span&gt;</h3>
+<p>Sirve para darle estilo a una parte del texto.</p>
+<p>Mi color favorito es el <span style="color: blue;">azul</span>.</p>
+
+<hr>
+<h2>E. Etiquetas de enlace</h2>
+
+<h3>&lt;a&gt;</h3>
+<p>Crea un enlace a otra página.</p>
+<a href="https://www.w3schools.com/html/default.asp" target="_blank">Ir a W3Schools</a>
+
+<h3>&lt;map&gt; y &lt;area&gt;</h3>
+<p>map crea un mapa de imagen y area define las zonas donde se puede hacer clic.</p>
+<img src="img/nature_wide.jpg" alt="Imagen con zonas" usemap="#mimapa" width="300">
+<map name="mimapa">
+  <area shape="rect" coords="0,0,150,150" alt="Zona 1" href="https://www.utn.ac.cr">
+  <area shape="circle" coords="220,75,50" alt="Zona 2" href="https://www.oracle.com">
+</map>
+
+<hr>
+<h2>F. Etiquetas de imagen</h2>
+
+<h3>&lt;img&gt;</h3>
+<p>Muestra una imagen. src es la ruta y alt es el texto alternativo.</p>
+<img src="img/paisaje.jpg" alt="Paisaje" width="250">
+
+<h3>&lt;picture&gt; y &lt;source&gt;</h3>
+<p>picture permite usar varias imágenes según el tamaño de pantalla, y source indica cada una.</p>
+<picture>
+  <source media="(max-width: 600px)" srcset="img/flowers.jpg">
+  <img src="img/woods.jpg" alt="Imagen responsive" width="250">
+</picture>
+
+<h3>&lt;canvas&gt;</h3>
+<p>Es un lienzo para dibujar con JavaScript.</p>
+<canvas id="lienzo" width="200" height="100" style="border: 1px solid black;"></canvas>
+<script>
+var c = document.getElementById("lienzo").getContext("2d");
+c.fillStyle = "red";
+c.fillRect(20, 20, 100, 50);
+</script>
+
+<h3>&lt;svg&gt;</h3>
+<p>Dibuja gráficos vectoriales, como formas.</p>
+<svg width="200" height="100">
+  <circle cx="50" cy="50" r="40" fill="green" />
+  <rect x="100" y="20" width="80" height="60" fill="blue" />
+</svg>
+
+<hr>
+<h2>G. Etiquetas de multimedia</h2>
+
+<h3>&lt;audio&gt; y &lt;source&gt;</h3>
+<p>audio inserta un audio y source indica el archivo.</p>
+<audio controls>
+  <source src="media/Plush Stereo.mp3" type="audio/mpeg">
+  Su navegador no soporta audio.
+</audio>
+
+<h3>&lt;video&gt;, &lt;source&gt; y &lt;track&gt;</h3>
+<p>video inserta un video, source indica el archivo y track agrega subtítulos.</p>
+<video controls width="350">
+  <source src="media/beach.mp4" type="video/mp4">
+  <track src="media/subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
+  Su navegador no soporta video.
+</video>
+
+<h3>&lt;canvas&gt;</h3>
+<p>También se usa para gráficos dinámicos como juegos (ya está demostrado arriba, aquí otro ejemplo).</p>
+<canvas id="lienzo2" width="200" height="100" style="border: 1px solid black;"></canvas>
+<script>
+var c2 = document.getElementById("lienzo2").getContext("2d");
+c2.fillStyle = "orange";
+c2.beginPath();
+c2.arc(100, 50, 30, 0, 2 * Math.PI);
+c2.fill();
+</script>
+
+<h3>&lt;svg&gt;</h3>
+<p>Contenedor de gráficos SVG (ya está demostrado arriba, aquí otro ejemplo).</p>
+<svg width="200" height="100">
+  <line x1="10" y1="10" x2="190" y2="90" stroke="black" stroke-width="3" />
+  <text x="60" y="40">Texto en SVG</text>
+</svg>
+
+<h3>&lt;iframe&gt; con video de YouTube</h3>
+<p>Con iframe se puede mostrar un video de YouTube.</p>
+<iframe width="420" height="250" src="https://www.youtube.com/embed/ruIeHE2UJK8" allowfullscreen></iframe>
+
+</body>
+</html>
