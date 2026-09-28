@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Joel David Oses Castillo">
+<title>Tarea 2 - CSS3</title>
+<link rel="stylesheet" href="src/estilos.css">
+</head>
+<body>
+
+<h1>Tarea 2: CSS3</h1>
+<p>Nombre: <b>Joel David Oses Castillo</b></p>
+<p>Curso: ISW-512 Diseño de Aplicaciones Web</p>
+
+<nav>
+  <a href="#caja">2.1 Modelo de caja</a> |
+  <a href="#propiedades">2.2 Propiedades de posicionamiento</a> |
+  <a href="#flexbox">2.3 Flexbox</a>
+</nav>
+
+<!-- 2.1 Modelo de caja -->
+<section id="caja">
+<h2>2.1 Modelo de caja (Box Model)</h2>
+<p>Todos los elementos HTML son una caja formada por el contenido, el padding, el border y el margin.</p>
+
+<div class="fondo-margen">
+  <div class="caja-modelo">Contenido de la caja</div>
+</div>
+<p>Esta caja mide 200px de ancho y tiene padding de 20px, border de 5px y margin de 30px.</p>
+
+<h3>box-sizing</h3>
+<p>Las dos cajas tienen width: 200px, padding: 20px y border: 5px. En la verde (content-box) el ancho es solo del contenido, por lo que la caja termina midiendo 250px. En la roja (border-box) el ancho incluye el padding y el borde, así que mide 200px.</p>
+<div class="caja-content">content-box</div>
+<div class="caja-border">border-box</div>
+
+<h3>Elementos de bloque y en línea</h3>
+<p>Los elementos de bloque (div, p, h1) ocupan todo el ancho disponible y empiezan en una línea nueva. Los elementos en línea (span, a, b) solo ocupan lo que mide su contenido y se quedan en la misma línea.</p>
+<div class="bloque">Div 1 (bloque)</div>
+<div class="bloque">Div 2 (bloque)</div>
+<span class="linea">Span 1 (en línea)</span>
+<span class="linea">Span 2 (en línea)</span>
+<span class="linea">Span 3 (en línea)</span>
+<p>Los span tienen width: 300px, height: 100px y margin de 20px, pero en línea el width, el height y el margin de arriba y abajo no se aplican. Solo funcionan los márgenes de los lados.</p>
+
+<h3>Cambiar el comportamiento con display</h3>
+<p>Con la propiedad display se puede cambiar cómo se comporta un elemento. Los div tienen display inline y los span tienen display block.</p>
+<div class="bloque-a-linea">Div con display inline</div>
+<div class="bloque-a-linea">Div con display inline</div>
+<span class="linea-a-bloque">Span con display block</span>
+<span class="linea-a-bloque">Span con display block</span>
+</section>
+
+<!-- 2.2 Propiedades de visualización y posicionamiento -->
+<section id="propiedades">
+<h2>2.2 Propiedades de visualización y posicionamiento</h2>
+
+<h3>A. Position</h3>
+<p>Define cómo se posiciona un elemento. static es el valor normal (sigue el orden de la página). Relative se mueve respecto a su lugar normal. Absolute se posiciona respecto al contenedor padre que tenga position (el recuadro con borde negro). Fixed se queda fijo en la pantalla aunque se haga scroll (caja amarilla de abajo a la derecha).</p>
+<div class="contenedor-pos">
+  <div class="caja-pos pos-static">static</div>
+  <div class="caja-pos pos-relative">relative (top 20px, left 40px)</div>
+  <div class="caja-pos pos-absolute">absolute (top 10px, right 10px)</div>
+</div>
+<div class="pos-fixed">Fixed: Se mantiene aquí aunque se haga scroll</div>
+
+<h3>B. Float y Clear</h3>
+<p>Float saca el elemento del flujo normal y lo manda a la izquierda o a la derecha, y el texto lo rodea. Clear: both evita que un elemento quede al lado de los flotantes, y sirve para que el contenedor los abarque.</p>
+<div class="marco">
+  <div class="flotante izquierda">float left 1</div>
+  <div class="flotante izquierda">float left 2</div>
+  <div class="flotante derecha">float right</div>
+  <p>Este texto rodea a las cajas flotantes. Se acomoda en el espacio que dejan las cajas de la izquierda y de la derecha. Mientras más texto haya, más se nota cómo lo rodean.</p>
+  <div class="limpiar"></div>
+</div>
+
+<p>Ejemplo de diseño de página con float:</p>
+<div class="layout-float">
+  <div class="lf-encabezado">Encabezado</div>
+  <div class="lf-menu">Menú (float left, 30%)</div>
+  <div class="lf-contenido">Contenido (float left, 70%)</div>
+  <div class="lf-pie">Pie de página (clear both)</div>
+</div>
+
+<h3>C. Display</h3>
+<p>Cambia cómo se muestra un elemento. block ocupa toda la línea y respeta el width y el height. inline se queda en la línea y no respeta el width ni el height. inline-block se queda en la línea pero sí respeta el width y el height. none oculta el elemento y no ocupa espacio.</p>
+<div class="d-caja d-block">display: block</div>
+<div class="d-caja d-block">display: block</div>
+<span class="d-caja d-inline">display: inline</span>
+<span class="d-caja d-inline">display: inline</span>
+<span class="d-caja d-inlineblock">display: inline-block</span>
+<span class="d-caja d-inlineblock">display: inline-block</span>
+<div class="d-caja d-none">display: none</div>
+<p>Arriba hay un div con display: none, por eso no se ve ni ocupa espacio.</p>
+
+<h3>D. Overflow</h3>
+<p>Controla qué pasa cuando el contenido es más grande que la caja. Visible deja que el texto se salga (valor por defecto). Hidden corta lo que sobra. Scroll siempre muestra las barras. Auto muestra las barras solo si hacen falta.</p>
+<div class="fila-desborde">
+  <div class="desborde o-visible"><b>visible:</b> Este es un texto muy largo que no cabe en la caja porque la caja es pequeña. Sirve para ver qué pasa cuando el contenido se desborda.</div>
+  <div class="desborde o-hidden"><b>hidden:</b> Este es un texto muy largo que no cabe en la caja porque la caja es pequeña. Sirve para ver qué pasa cuando el contenido se desborda.</div>
+  <div class="desborde o-scroll"><b>scroll:</b> Este es un texto muy largo que no cabe en la caja porque la caja es pequeña. Sirve para ver qué pasa cuando el contenido se desborda.</div>
+  <div class="desborde o-auto"><b>auto:</b> Este es un texto muy largo que no cabe en la caja porque la caja es pequeña. Sirve para ver qué pasa cuando el contenido se desborda.</div>
+</div>
+
+<h3>E. Visibility</h3>
+<p>Visible muestra el elemento. Hidden lo oculta pero deja su espacio vacío. Collapse se usa en filas y columnas de tablas para quitarlas por completo.</p>
+<p>Con visibility: hidden (la caja 2 no se ve pero su espacio se queda):</p>
+<div class="v-caja">Caja 1</div>
+<div class="v-caja v-hidden">Caja 2</div>
+<div class="v-caja">Caja 3</div>
+<p>Con display: none (la caja 2 desaparece y no deja espacio):</p>
+<div class="v-caja">Caja 1</div>
+<div class="v-caja d-none">Caja 2</div>
+<div class="v-caja">Caja 3</div>
+
+<p>Con visibility: collapse en una fila de tabla (la fila 2 desaparece):</p>
+<table border="1">
+  <tr><td>Fila 1</td></tr>
+  <tr class="colapsada"><td>Fila 2</td></tr>
+  <tr><td>Fila 3</td></tr>
+</table>
+
+<p>Un caso donde visibility es útil: un mensaje que aparece sin mover el resto de la página. Pase el mouse por el texto:</p>
+<div class="hover-demo">
+  <b>Pase el mouse aquí</b> <span class="mensaje-oculto">mensaje oculto</span>
+  <p>Este párrafo no se mueve cuando aparece el mensaje.</p>
+</div>
+
+<h3>F. Z-index</h3>
+<p>Controla qué elemento queda encima cuando se superponen. El que tiene el número más alto queda arriba. Solo funciona en elementos con position (relative, absolute, fixed).</p>
+<div class="contenedor-z">
+  <div class="caja-z z1">z-index: 1</div>
+  <div class="caja-z z2">z-index: 3</div>
+  <div class="caja-z z3">z-index: 2</div>
+</div>
+<p>La caja verde (3) queda arriba de todas, luego la azul (2) y al final la roja (1).</p>
+</section>
+
+<!-- 2.3 Flexbox en CSS3 -->
+<section id="flexbox">
+<h2>2.3 Flexbox en CSS3</h2>
+<p>Flexbox sirve para acomodar elementos en una fila o en una columna de forma flexible. El contenedor lleva display: flex y sus hijos directos se convierten en items.</p>
+
+<h3>A. Flex Container</h3>
+
+<h4>flex-direction</h4>
+<p>Define la dirección de los items: row (por defecto), row-reverse, column y column-reverse.</p>
+<p>row:</p>
+<div class="flex fila"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>row-reverse:</p>
+<div class="flex fila-inv"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>column:</p>
+<div class="flex columna"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>column-reverse:</p>
+<div class="flex columna-inv"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+
+<h4>flex-wrap</h4>
+<p>Define si los items pueden pasar a otra línea cuando no caben. Los contenedores miden 300px de ancho.</p>
+<p>nowrap (por defecto, los items se aprietan para caber en una sola línea):</p>
+<div class="flex angosto sin-wrap"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+<p>wrap:</p>
+<div class="flex angosto con-wrap"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+<p>wrap-reverse:</p>
+<div class="flex angosto wrap-inv"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+
+<h4>flex-flow</h4>
+<p>Es la forma corta de escribir flex-direction y flex-wrap juntos. Aquí: flex-flow: row-reverse wrap.</p>
+<div class="flex angosto flujo"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+
+<h4>justify-content</h4>
+<p>Acomoda los items en el eje principal (horizontal en una fila).</p>
+<p>flex-start:</p>
+<div class="flex j-inicio"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>flex-end:</p>
+<div class="flex j-fin"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>center:</p>
+<div class="flex j-centro"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>space-between:</p>
+<div class="flex j-entre"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>space-around:</p>
+<div class="flex j-alrededor"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+<p>space-evenly:</p>
+<div class="flex j-uniforme"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+
+<h4>align-items</h4>
+<p>Acomoda los items en el eje secundario (vertical en una fila). Los contenedores miden 100px de alto y el item 2 tiene la letra más grande.</p>
+<p>stretch (por defecto):</p>
+<div class="flex alto a-estirar"><div class="item">1</div><div class="item grande">2</div><div class="item">3</div></div>
+<p>flex-start:</p>
+<div class="flex alto a-inicio"><div class="item">1</div><div class="item grande">2</div><div class="item">3</div></div>
+<p>flex-end:</p>
+<div class="flex alto a-fin"><div class="item">1</div><div class="item grande">2</div><div class="item">3</div></div>
+<p>center:</p>
+<div class="flex alto a-centro"><div class="item">1</div><div class="item grande">2</div><div class="item">3</div></div>
+<p>baseline (alinea la base del texto):</p>
+<div class="flex alto a-base"><div class="item">1</div><div class="item grande">2</div><div class="item">3</div></div>
+
+<h4>align-content</h4>
+<p>Acomoda las líneas de items cuando hay varias líneas (por eso necesita flex-wrap). Los contenedores miden 300px de ancho y 150px de alto.</p>
+<p>stretch (por defecto):</p>
+<div class="flex angosto contenido-alto c-estirar"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+<p>center:</p>
+<div class="flex angosto contenido-alto c-centro"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+<p>space-between:</p>
+<div class="flex angosto contenido-alto c-entre"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+<p>space-around:</p>
+<div class="flex angosto contenido-alto c-alrededor"><div class="item item-ancho">1</div><div class="item item-ancho">2</div><div class="item item-ancho">3</div><div class="item item-ancho">4</div><div class="item item-ancho">5</div></div>
+
+<h3>B. Flex Items</h3>
+
+<h4>order</h4>
+<p>Cambia el orden de los items sin cambiar el HTML. Aquí el HTML dice 1, 2, 3, pero tienen order 3, 1 y 2, así que se ven como 2, 3, 1.</p>
+<div class="flex"><div class="item orden-3">1 (order 3)</div><div class="item orden-1">2 (order 1)</div><div class="item orden-2">3 (order 2)</div></div>
+
+<h4>flex-grow</h4>
+<p>Indica cuánto crece un item para ocupar el espacio libre. El item 2 crece el doble que el 1, y el item 3 no crece.</p>
+<div class="flex"><div class="item g1">1 (grow 1)</div><div class="item g2">2 (grow 2)</div><div class="item g0">3 (grow 0)</div></div>
+
+<h4>flex-shrink</h4>
+<p>Indica cuánto se encoge un item cuando no hay espacio. Los tres items miden 150px pero el contenedor solo mide 300px. El item B no se encoge y el C se encoge el doble que el A.</p>
+<div class="flex angosto"><div class="item ancho-150 s1">A (1)</div><div class="item ancho-150 s0">B (0)</div><div class="item ancho-150 s2">C (2)</div></div>
+
+<h4>flex-basis</h4>
+<p>Es el tamaño inicial de un item antes de repartir el espacio. Aquí los items tienen 100px, 200px y auto.</p>
+<div class="flex"><div class="item b100">basis 100px</div><div class="item b200">basis 200px</div><div class="item bauto">basis auto</div></div>
+
+<h4>flex</h4>
+<p>Es la forma corta de flex-grow, flex-shrink y flex-basis. El item 1 tiene flex: 0 0 150px (tamaño fijo) y el item 2 tiene flex: 1 (ocupa el resto).</p>
+<div class="flex"><div class="item f-fijo">flex: 0 0 150px</div><div class="item f-resto">flex: 1</div></div>
+
+<h4>align-self</h4>
+<p>Permite que un item se alinee distinto a los demás en el eje secundario.</p>
+<div class="flex alto"><div class="item as-inicio">flex-start</div><div class="item as-centro">center</div><div class="item as-fin">flex-end</div><div class="item as-estirar">stretch</div></div>
+
+<h3>C. Flex Responsive</h3>
+<p>Con flexbox y flex-wrap las tarjetas se acomodan solas según el ancho de la pantalla. Cambie el tamaño de la ventana para verlo.</p>
+<div class="tarjetas">
+  <div class="tarjeta">Tarjeta 1</div>
+  <div class="tarjeta">Tarjeta 2</div>
+  <div class="tarjeta">Tarjeta 3</div>
+  <div class="tarjeta">Tarjeta 4</div>
+</div>
+
+<p>Con un media query, el menú y el contenido pasan de estar uno al lado del otro a estar uno debajo del otro cuando la pantalla mide 600px o menos.</p>
+<div class="layout-resp">
+  <div class="menu-resp">Menú</div>
+  <div class="contenido-resp">Contenido principal de la página</div>
+</div>
+</section>
+
+</body>
+</html>

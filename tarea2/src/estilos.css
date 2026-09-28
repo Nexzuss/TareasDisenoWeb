@@ -1,0 +1,478 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+}
+h2 {
+  background-color: #2c3e50;
+  color: white;
+  padding: 8px;
+}
+h3 {
+  border-bottom: 2px solid #2c3e50;
+}
+
+/* 2.1 Modelo de caja */
+
+
+/* el fondo gris deja ver el espacio del margen */
+.fondo-margen {
+  background-color: #dddddd;
+  overflow: hidden;
+}
+.caja-modelo {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid navy;
+  margin: 30px;
+  background-color: lightblue;
+}
+
+/* Content-box contra border-box */
+.caja-content, .caja-border {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin-bottom: 10px;
+}
+.caja-content {
+  box-sizing: content-box;
+  background-color: lightgreen;
+}
+.caja-border {
+  box-sizing: border-box;
+  background-color: lightsalmon;
+}
+
+/* Elementos de bloque y en línea */
+.bloque {
+  background-color: lightgreen;
+  margin: 5px 0;
+  padding: 10px;
+}
+.linea {
+  background-color: khaki;
+  width: 300px;
+  height: 100px;
+  margin: 20px;
+  padding: 5px;
+}
+
+/* Cambiar el comportamiento con display */
+.bloque-a-linea {
+  display: inline;
+  background-color: pink;
+  padding: 5px;
+}
+.linea-a-bloque {
+  display: block;
+  background-color: lightblue;
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+/* 2.2 Position */
+.contenedor-pos {
+  position: relative;
+  height: 150px;
+  border: 2px solid black;
+  background-color: #f2f2f2;
+}
+.caja-pos {
+  width: 150px;
+  padding: 5px;
+  color: white;
+}
+.pos-static {
+  position: static;
+  background-color: gray;
+}
+.pos-relative {
+  position: relative;
+  top: 20px;
+  left: 40px;
+  background-color: green;
+}
+.pos-absolute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: purple;
+}
+.pos-fixed {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: yellow;
+  border: 2px solid black;
+  padding: 8px;
+  z-index: 100;
+}
+
+/* Float y Clear */
+.marco {
+  border: 2px solid black;
+  padding: 5px;
+}
+.flotante {
+  width: 100px;
+  height: 60px;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
+.izquierda {
+  float: left;
+  background-color: teal;
+}
+.derecha {
+  float: right;
+  background-color: crimson;
+}
+.limpiar {
+  clear: both;
+}
+
+/* diseño de página con float */
+.layout-float div {
+  padding: 10px;
+}
+.lf-encabezado {
+  background-color: #f4d03f;
+}
+.lf-menu {
+  float: left;
+  width: 30%;
+  box-sizing: border-box;
+  background-color: #82e0aa;
+}
+.lf-contenido {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  background-color: #85c1e9;
+}
+.lf-pie {
+  clear: both;
+  background-color: #f1948a;
+}
+
+/* Display */
+.d-caja {
+  width: 150px;
+  height: 40px;
+  padding: 5px;
+  margin: 2px;
+  background-color: lightblue;
+  border: 1px solid black;
+}
+.d-block {
+  display: block;
+}
+.d-inline {
+  display: inline;
+}
+.d-inlineblock {
+  display: inline-block;
+}
+.d-none {
+  display: none;
+}
+
+/* Overflow */
+.fila-desborde {
+  margin-bottom: 50px;
+}
+.desborde {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  height: 70px;
+  margin: 10px;
+  border: 2px solid black;
+  background-color: #eeeeff;
+}
+.o-visible {
+  overflow: visible;
+}
+.o-hidden {
+  overflow: hidden;
+}
+.o-scroll {
+  overflow: scroll;
+}
+.o-auto {
+  overflow: auto;
+}
+
+/* Visibility */
+.v-caja {
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+  margin: 5px;
+  background-color: orange;
+}
+.v-hidden {
+  visibility: hidden;
+}
+.colapsada {
+  visibility: collapse;
+}
+.mensaje-oculto {
+  visibility: hidden;
+  background-color: yellow;
+  padding: 5px;
+}
+.hover-demo:hover .mensaje-oculto {
+  visibility: visible;
+}
+
+/* ===== Z-INDEX ===== */
+.contenedor-z {
+  position: relative;
+  height: 150px;
+  border: 2px solid black;
+}
+.caja-z {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  padding: 5px;
+  color: white;
+}
+.z1 {
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  z-index: 1;
+}
+.z2 {
+  top: 30px;
+  left: 60px;
+  background-color: green;
+  z-index: 3;
+}
+.z3 {
+  top: 50px;
+  left: 110px;
+  background-color: blue;
+  z-index: 2;
+}
+
+/* ===== 2.3 FLEXBOX ===== */
+.flex {
+  display: flex;
+  border: 2px solid black;
+  background-color: #f2f2f2;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.item {
+  background-color: orange;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 3px;
+  box-sizing: border-box;
+}
+.grande {
+  font-size: 30px;
+}
+.angosto {
+  width: 300px;
+}
+.alto {
+  height: 100px;
+}
+.item-ancho {
+  width: 90px;
+}
+
+/* flex-direction */
+.fila {
+  flex-direction: row;
+}
+.fila-inv {
+  flex-direction: row-reverse;
+}
+.columna {
+  flex-direction: column;
+}
+.columna-inv {
+  flex-direction: column-reverse;
+}
+
+/* flex-wrap */
+.sin-wrap {
+  flex-wrap: nowrap;
+}
+.con-wrap {
+  flex-wrap: wrap;
+}
+.wrap-inv {
+  flex-wrap: wrap-reverse;
+}
+
+/* flex-flow (direction + wrap) */
+.flujo {
+  flex-flow: row-reverse wrap;
+}
+
+/* justify-content */
+.j-inicio {
+  justify-content: flex-start;
+}
+.j-fin {
+  justify-content: flex-end;
+}
+.j-centro {
+  justify-content: center;
+}
+.j-entre {
+  justify-content: space-between;
+}
+.j-alrededor {
+  justify-content: space-around;
+}
+.j-uniforme {
+  justify-content: space-evenly;
+}
+
+/* align-items */
+.a-estirar {
+  align-items: stretch;
+}
+.a-inicio {
+  align-items: flex-start;
+}
+.a-fin {
+  align-items: flex-end;
+}
+.a-centro {
+  align-items: center;
+}
+.a-base {
+  align-items: baseline;
+}
+
+/* align-content */
+.contenido-alto {
+  height: 150px;
+  flex-wrap: wrap;
+}
+.c-estirar {
+  align-content: stretch;
+}
+.c-centro {
+  align-content: center;
+}
+.c-entre {
+  align-content: space-between;
+}
+.c-alrededor {
+  align-content: space-around;
+}
+
+/* order */
+.orden-3 {
+  order: 3;
+}
+.orden-1 {
+  order: 1;
+}
+.orden-2 {
+  order: 2;
+}
+
+/* flex-grow */
+.g0 {
+  flex-grow: 0;
+}
+.g1 {
+  flex-grow: 1;
+}
+.g2 {
+  flex-grow: 2;
+}
+
+/* flex-shrink */
+.ancho-150 {
+  width: 150px;
+}
+.s1 {
+  flex-shrink: 1;
+}
+.s0 {
+  flex-shrink: 0;
+}
+.s2 {
+  flex-shrink: 2;
+}
+
+/* flex-basis */
+.b100 {
+  flex-basis: 100px;
+}
+.b200 {
+  flex-basis: 200px;
+}
+.bauto {
+  flex-basis: auto;
+}
+
+/* flex */
+.f-fijo {
+  flex: 0 0 150px;
+}
+.f-resto {
+  flex: 1;
+}
+
+/* align-self */
+.as-inicio {
+  align-self: flex-start;
+}
+.as-centro {
+  align-self: center;
+}
+.as-fin {
+  align-self: flex-end;
+}
+.as-estirar {
+  align-self: stretch;
+}
+
+/* flex responsive */
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tarjeta {
+  flex: 1 1 200px;
+  background-color: lightgreen;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+}
+.layout-resp {
+  display: flex;
+}
+.menu-resp {
+  flex: 1;
+  background-color: #82e0aa;
+  padding: 10px;
+}
+.contenido-resp {
+  flex: 3;
+  background-color: #85c1e9;
+  padding: 10px;
+}
+
+/* cuando la pantalla mide 600px o menos, el menú y el contenido se apilan */
+@media (max-width: 600px) {
+  .layout-resp {
+    flex-direction: column;
+  }
+}
