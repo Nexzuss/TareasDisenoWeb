@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #444444;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
+
+/* ===================================================== */
+/* ========== HEADER ========== */
+/* ===================================================== */
+#wdm-header {
+  display: flex;
+  width: 100%;
+}
+
+#wdm-header .wdm-img {
+  flex: 1;
+  background-color: #14DE68;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#wdm-header .wdm-texto {
+  flex: 1;
+  background-color: #363636;
+  color: white;
+  padding: 40px 30px;
+}
+
+#wdm-header .wdm-texto h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+
+#wdm-header .wdm-texto p {
+  margin: 0;
+  color: #f2a93b;
+  font-size: 14px;
+}
+
+/* ===================================================== */
+/* ========== NAVEGACIÓN ========== */
+/* ===================================================== */
+#wdm-nav {
+  background-color: #363636;
+}
+
+#wdm-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#wdm-nav li {
+  padding: 12px 20px;
+}
+
+#wdm-nav a {
+  color: white;
+  font-size: 14px;
+}
+
+#wdm-nav a:hover {
+  color: #f2a93b;
+}
+
+/* ===================================================== */
+/* ========== CUERPO: TEMAS (aside) + CONTENIDO (main) ========== */
+/* ===================================================== */
+#wdm-cuerpo {
+  background-color: #eef1f3;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+#wdm-temas {
+  flex: 0 0 220px;
+  background-color: white;
+  padding: 20px;
+}
+
+#wdm-temas h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+#wdm-temas ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+#wdm-temas li {
+  margin-bottom: 10px;
+}
+
+#wdm-temas a {
+  color: #2f80ed;
+}
+
+#wdm-temas a:hover {
+  text-decoration: underline;
+}
+
+#wdm-contenido {
+  flex: 1;
+  background-color: white;
+  padding: 30px;
+}
+
+#wdm-contenido h2 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+#wdm-contenido h2:not(:first-child) {
+  margin-top: 40px;
+}
+
+#wdm-contenido h3 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+
+#wdm-contenido p {
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+#wdm-contenido .wdm-codigo {
+  background-color: #f4f6f8;
+  border-left: 4px solid #5cb85c;
+  padding: 10px 15px;
+  margin: 10px 0;
+  overflow-x: auto;
+  font-size: 14px;
+}
+
+/* Demo de Grid-View (CSS Grid nativo, no es de Bootstrap) */
+.wdm-grid-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.wdm-grid-demo div {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+/* Demo de Media Query en vivo */
+.wdm-demo-mq {
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: steelblue;
+}
+
+.wdm-demo-mq::after {
+  content: "Pantalla ancha (más de 600px): fondo azul";
+}
+
+@media (max-width: 600px) {
+  .wdm-demo-mq {
+    background-color: crimson;
+  }
+  .wdm-demo-mq::after {
+    content: "Pantalla angosta (600px o menos): fondo rojo";
+  }
+}
+
+/* ===================================================== */
+/* ========== IMÁGENES ========== */
+/* ===================================================== */
+#wdm-imagenes {
+  background-color: #eef1f3;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  gap: 10px;
+}
+
+#wdm-imagenes div {
+  flex: 1;
+  background-color: #f0b27a;
+  color: #7a3e10;
+  text-align: center;
+  padding: 35px 5px;
+}
+
+/* ===================================================== */
+/* ========== FOOTER ========== */
+/* ===================================================== */
+#wdm-footer {
+  background-color: #363636;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#wdm-footer .wdm-der {
+  text-align: right;
+}
+
+#wdm-footer p {
+  margin: 2px 0;
+}
+
+#wdm-footer .wdm-sub {
+  color: #f2a93b;
+  font-size: 13px;
+}
+
+/* ===================================================== */
+/* ========== MEDIA QUERY GENERAL: TODO EN UNA COLUMNA ========== */
+/* ===================================================== */
+@media (max-width: 768px) {
+  #wdm-header {
+    flex-direction: column;
+  }
+
+  #wdm-nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #wdm-nav li {
+    border-bottom: 1px solid #45586d;
+  }
+
+  #wdm-cuerpo {
+    flex-direction: column;
+  }
+
+  #wdm-imagenes {
+    flex-direction: column;
+  }
+
+  .wdm-grid-demo {
+    grid-template-columns: 1fr;
+  }
+
+  #wdm-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #wdm-footer .wdm-der {
+    text-align: left;
+  }
+}

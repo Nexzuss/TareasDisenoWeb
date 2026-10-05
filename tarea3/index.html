@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Joel David Oses Castillo">
+<title>Tarea 3 - Diseño Web Responsivo</title>
+<link rel="stylesheet" href="css/estilos.css">
+<!-- Bootstrap 5 (CDN), se usa solo dentro del tema "Bootstrap 5" de esta página -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header id="wdm-header">
+  <div class="wdm-img">Imagen o información referencial</div>
+  <div class="wdm-texto">
+    <h1>Diseño Web Responsivo</h1>
+    <p>Viewport, Media Queries, Grid-View y Bootstrap 5</p>
+  </div>
+</header>
+
+<!-- ========== NAVEGACIÓN PRINCIPAL ========== -->
+<nav id="wdm-nav">
+  <ul>
+    <li><a href="#concepto">Concepto</a></li>
+    <li><a href="#viewport">Viewport</a></li>
+    <li><a href="#media-queries">Media Queries</a></li>
+    <li><a href="#grid-view">Grid-View</a></li>
+    <li><a href="#bootstrap">Bootstrap 5</a></li>
+  </ul>
+</nav>
+
+<!-- ========== TEMAS (aside) + CONTENIDO (main) ========== -->
+<div id="wdm-cuerpo">
+  <aside id="wdm-temas">
+    <h3>Temas</h3>
+    <ul>
+      <li><a href="#concepto">Concepto</a></li>
+      <li><a href="#viewport">Viewport</a></li>
+      <li><a href="#media-queries">Media Queries</a></li>
+      <li><a href="#grid-view">Grid-View</a></li>
+      <li><a href="#bootstrap">Bootstrap 5</a></li>
+    </ul>
+  </aside>
+
+  <main id="wdm-contenido">
+
+    <!-- 2.1.i Concepto -->
+    <h2 id="concepto">Diseño web responsivo</h2>
+    <p>Permite que una misma página se adapte a cualquier tamaño de pantalla, ya sea celular, tablet o computadora.</p>
+    <p>Es importante porque hoy la mayoría de las personas navega desde el celular, y si una página no es responsiva el texto se puede salir de la pantalla o los botones quedan muy pequeños para tocarlos. Los principios básicos son usar medidas flexibles en vez de píxeles fijos, imágenes que también se achican, y cambiar el acomodo del contenido según el ancho de pantalla con Media Queries.</p>
+
+    <!-- 2.1.ii Viewport -->
+    <h2 id="viewport">Viewport</h2>
+    <p>Es el área visible de la página dentro del navegador. Se configura así:</p>
+    <div class="wdm-codigo"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></div>
+    <p><code>width=device-width</code> hace que el navegador use el ancho real del dispositivo en vez de simular una pantalla de escritorio, y <code>initial-scale=1.0</code> evita que la página cargue con zoom. Esta misma etiqueta está en el <code>&lt;head&gt;</code> de esta página.</p>
+
+    <!-- 2.1.iii Media Queries -->
+    <h2 id="media-queries">CSS3 Media Queries</h2>
+    <p>Aplican estilos diferentes según el tamaño de la pantalla.</p>
+    <div class="wdm-codigo"><code>@media (max-width: 768px) {<br>&nbsp;&nbsp;.layout { flex-direction: column; }<br>}</code></div>
+    <p>Ejemplo en vivo, achique la ventana del navegador a 600px o menos para ver el cambio:</p>
+    <div class="wdm-demo-mq"></div>
+
+    <!-- Grid-View -->
+    <h2 id="grid-view">Grid-View</h2>
+    <p>Organiza el contenido en columnas. Con CSS Grid, en vez de usar float o flexbox, se define el contenedor con <code>display: grid</code> y <code>grid-template-columns</code>, y en pantallas angostas las columnas pasan a ser una sola (lo que se ve en esta misma página si achica la ventana).</p>
+    <div class="wdm-codigo"><code>.wdm-grid-demo {<br>&nbsp;&nbsp;display: grid;<br>&nbsp;&nbsp;grid-template-columns: 1fr 1fr;<br>}</code></div>
+    <div class="wdm-grid-demo">
+      <div>Columna 1</div>
+      <div>Columna 2</div>
+    </div>
+
+    <!-- 2.2 Bootstrap 5 -->
+    <h2 id="bootstrap">Bootstrap 5</h2>
+    <p>Es un framework de CSS (y un poco de JavaScript) que trae clases ya hechas para construir páginas responsivas más rápido, sin escribir todo el CSS a mano. Se usa enlazando su hoja de estilos desde un CDN:</p>
+    <div class="wdm-codigo"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"&gt;</code></div>
+
+    <h3>Containers</h3>
+    <p>Centran el contenido y le ponen un margen a los lados. <code>container</code> tiene un ancho máximo, mientras que <code>container-fluid</code> ocupa todo el ancho de la pantalla.</p>
+    <div class="container bg-light border p-3 mb-2">Esto es un <code>container</code>.</div>
+    <div class="container-fluid bg-light border p-3">Esto es un <code>container-fluid</code>.</div>
+
+    <h3>Grid System</h3>
+    <p>Es el sistema de columnas de Bootstrap (distinto al Grid-View de CSS visto arriba). La pantalla se divide en 12 columnas:</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 bg-success text-white p-3 border">col-md-4</div>
+        <div class="col-12 col-md-4 bg-success text-white p-3 border">col-md-4</div>
+        <div class="col-12 col-md-4 bg-success text-white p-3 border">col-md-4</div>
+      </div>
+    </div>
+
+    <h3>Flex</h3>
+    <p>Clases para usar Flexbox sin escribir CSS, como <code>d-flex</code> y <code>justify-content-between</code>.</p>
+    <div class="d-flex justify-content-between bg-light border p-3">
+      <div class="bg-warning p-2">Item 1</div>
+      <div class="bg-warning p-2">Item 2</div>
+      <div class="bg-warning p-2">Item 3</div>
+    </div>
+
+    <h3>Control Navbar</h3>
+    <p>Barra de navegación que trae el botón de hamburguesa para pantallas pequeñas:</p>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mi sitio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h3>Control Carousel</h3>
+    <p>Carrusel de contenido que cambia solo, y también se puede mover con las flechas:</p>
+    <div id="miCarrusel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="bg-primary text-white text-center p-5">Diapositiva 1</div>
+        </div>
+        <div class="carousel-item">
+          <div class="bg-secondary text-white text-center p-5">Diapositiva 2</div>
+        </div>
+        <div class="carousel-item">
+          <div class="bg-dark text-white text-center p-5">Diapositiva 3</div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </main>
+</div>
+
+<!-- ========== IMÁGENES ========== -->
+<div id="wdm-imagenes">
+  <div>img 1</div>
+  <div>img 2</div>
+  <div>img 3</div>
+  <div>img 4</div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer id="wdm-footer">
+  <div class="wdm-izq">
+    <p><b>Tarea 3</b></p>
+    <p class="wdm-sub">Diseño de Aplicaciones Web</p>
+  </div>
+  <div class="wdm-der">
+    <p><b>UTN</b></p>
+    <p class="wdm-sub">Joel David Oses Castillo</p>
+  </div>
+</footer>
+
+<!-- JavaScript de Bootstrap (para el navbar y el carousel) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
