@@ -1,0 +1,385 @@
+:root {
+    --primary: #3CB815;
+    --secondary: #F65005;
+    --light: #F7F8FC;
+    --dark: #111111;
+}
+
+
+/*** Section Header ***/
+.section-header {
+    position: relative;
+    padding-top: 25px;
+}
+
+.section-header::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 2px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+}
+
+.section-header::after {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 2px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+}
+
+.section-header.text-start::before,
+.section-header.text-start::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+
+/*** Mejores Frutas (sin Bootstrap) ***/
+.frutas-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.frutas-img {
+    flex: 1;
+    text-align: center;
+}
+
+.frutas-img img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.frutas-texto {
+    flex: 1;
+}
+
+.frutas-texto h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.frutas-texto p {
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.icono-check {
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+.btn-mas-info {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 15px;
+    border: 2px solid var(--primary);
+}
+
+.btn-mas-info:hover {
+    background-color: white;
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .frutas-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/*** Nos Caracteríza (sin Bootstrap, con Flexbox) ***/
+.caracteriza-section {
+    background-color: var(--light);
+    padding: 60px 20px;
+}
+
+.caracteriza-section .section-header {
+    text-align: center;
+}
+
+.caracteriza-cajas {
+    display: flex;
+    gap: 30px;
+    max-width: 1140px;
+    margin: 30px auto 0 auto;
+}
+
+.caracteriza-caja {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.caracteriza-caja img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.caracteriza-caja h4 {
+    margin-bottom: 10px;
+}
+
+.caracteriza-caja p {
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.btn-outline-mas {
+    display: inline-block;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 6px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.btn-outline-mas:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .caracteriza-cajas {
+        flex-direction: column;
+    }
+}
+
+
+/*** Nuestros Productos (sin Bootstrap) ***/
+.productos-section {
+    padding: 60px 20px;
+}
+
+.productos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1140px;
+    margin: 0 auto 30px auto;
+}
+
+.productos-header h1 {
+    margin-bottom: 5px;
+}
+
+.productos-header p {
+    color: #666666;
+    max-width: 500px;
+}
+
+.productos-tabs {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.productos-tabs a {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.productos-tabs a.activo {
+    background-color: var(--primary);
+    color: white;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.producto-card {
+    background-color: white;
+    border: 1px solid #eeeeee;
+}
+
+.producto-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: #f5f5f5;
+}
+
+.producto-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.producto-info a {
+    color: var(--dark);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.producto-info span {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.producto-acciones {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eeeeee;
+    padding: 10px 15px;
+    font-size: 13px;
+}
+
+.producto-acciones a {
+    color: #777777;
+    text-decoration: none;
+}
+
+.producto-acciones a:last-child {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .productos-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*** Visita nuestras fincas (sin Bootstrap) ***/
+.fincas-section {
+    background-color: var(--primary);
+    padding: 50px 20px;
+}
+
+.fincas-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    max-width: 1140px;
+    margin: 0 auto;
+    color: white;
+}
+
+.fincas-texto h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.fincas-texto p {
+    margin: 0;
+}
+
+.btn-ingresar {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .fincas-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/*** Footer ***/
+.footer-section {
+    background-color: var(--dark);
+    color: #cccccc;
+    padding: 50px 20px 20px 20px;
+}
+
+.footer-columnas {
+    display: flex;
+    gap: 40px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.footer-columnas > div {
+    flex: 1;
+}
+
+.footer-columnas h4 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-columnas p {
+    margin-bottom: 8px;
+}
+
+.footer-columnas i {
+    color: var(--primary);
+    margin-right: 8px;
+    width: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.footer-links i {
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .footer-columnas {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
